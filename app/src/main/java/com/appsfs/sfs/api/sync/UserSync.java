@@ -60,9 +60,9 @@ public class UserSync {
 
     public UserSync(JSONObject user) throws JSONException {
         this(user, null);
-        if (SHIPPER_TYPE.equals(accountable_type)) {
+        if (SHIPPER_TYPE.equalsIgnoreCase(accountable_type)) {
             accountSync = new ShipperSync(user.getJSONObject("accountable").getJSONObject(SHIPPER_TYPE), this);
-        } else if (SHOP_TYPE.equals(accountable_type)){
+        } else if (SHOP_TYPE.equalsIgnoreCase(accountable_type)){
             accountSync = new ShopSync(user.getJSONObject("accountable").getJSONObject(SHOP_TYPE), this);
         }
     }
