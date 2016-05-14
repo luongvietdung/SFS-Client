@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">SFS</string>
+    <string name="action_settings">Settings</string>
+    <string name="hint_phone_number">Phone Numbers</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_email">name@gmail.com</string>
+    <string name="hint_confirm_password">Confirm Password</string>
+    <string name="btn_login">Login</string>
+    <string name="btn_register">Register</string>
+    <string name="btn_save_profile">Save</string>
+    <string name="title_activity_shop">Shop details</string>
+    <string name="title_activity_shipper">Shipper details</string>
+    <string name="title_activity_edit_profile">Edit profile</string>
+    <string name="title_activity_edit_shop">Edit information</string>
+    <string name="title_activity_login">Login</string>
+    <string name="title_activity_register">Register</string>
+
+</resources>

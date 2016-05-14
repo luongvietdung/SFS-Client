@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:layout_scrollFlags="scroll|enterAlways"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/email"
+                android:hint="@string/hint_email"
+                android:textColor="@color/input_login"
+                android:inputType="text"
+                android:textColorHint="@color/input_login_hint"
+                android:padding="10dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/phone_number"
+                android:hint="@string/hint_phone_number"
+                android:textColor="@color/input_login"
+                android:inputType="phone"
+                android:textColorHint="@color/input_login_hint"
+                android:layout_marginTop="20dip"
+                android:padding="10dp"/>
+            <!--android:layout_marginTop="20dip"-->
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/password"
+                android:hint="@string/hint_password"
+                android:textColor="@color/input_login"
+                android:textColorHint="@color/input_login_hint"
+                android:padding="10dp"
+                android:inputType="textPassword"
+                android:layout_marginTop="20dip"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/confirm_password"
+                android:hint="@string/hint_confirm_password"
+                android:textColor="@color/input_login"
+                android:textColorHint="@color/input_login_hint"
+                android:padding="10dp"
+                android:inputType="textPassword"
+                android:layout_marginTop="20dip"
+                />
+
+            <RadioGroup
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dip"
+                android:id="@+id/radio_group"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radio_shipper"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="Shipper " />
+
+                <RadioButton
+                    android:id="@+id/radio_shop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Shop" />
+            </RadioGroup>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_next"
+                android:text="Next"
+                android:textSize="15sp"
+                android:background="@color/bg_register"
+                android:layout_marginTop="20dip"
+                android:textAllCaps="false"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
