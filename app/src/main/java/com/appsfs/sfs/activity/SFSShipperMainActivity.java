@@ -98,7 +98,6 @@ public class SFSShipperMainActivity extends AppCompatActivity implements OnMapRe
         NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
         mHeaderView = navigationView.getHeaderView(0);
         mHeaderName = (TextView) mHeaderView.findViewById(R.id.tv_header);
-//        mHeaderName.setText(username);
 
         Menu menu = navigationView.getMenu();
         for (int i = 0; i < menu.size(); i++) {
@@ -137,6 +136,7 @@ public class SFSShipperMainActivity extends AppCompatActivity implements OnMapRe
         String json = mSfsPreference.getString("user_json","");
         try {
             UserSync userSync = new UserSync(new JSONObject(json));
+            mHeaderName.setText(userSync.getPhone());
             latLng = new LatLng(userSync.getLatitude(),userSync.getLongitude());
             Log.d("","Locatoion " + latLng);
             new GetAllShopOnline(SFSShipperMainActivity.this,this,this).start();
