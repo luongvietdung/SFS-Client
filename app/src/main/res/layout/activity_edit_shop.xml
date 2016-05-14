@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:layout_scrollFlags="scroll|enterAlways"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_shop_name"
+                android:text="Name"
+                android:textColor="@color/btn_login"
+                android:padding="10dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edit_shop_name"
+                android:hint="Name"
+                android:textColor="@color/input_login"
+                android:inputType="text"
+                android:textColorHint="@color/input_login_hint"
+                android:layout_marginTop="5dip"
+                android:padding="10dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_shop_address"
+                android:textColor="@color/btn_login"
+                android:padding="10dp"
+                android:text="Address"
+                android:layout_marginTop="5dip"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edit_shop_address"
+                android:hint="Address"
+                android:textColor="@color/input_login"
+                android:padding="10dp"
+                android:layout_marginTop="10dip"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_shop_product"
+                android:textColor="@color/btn_login"
+                android:padding="10dp"
+                android:text="Product"
+                android:layout_marginTop="5dip"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edit_shop_product"
+                android:hint="Product"
+                android:textColor="@color/input_login"
+                android:padding="10dp"
+                android:layout_marginTop="10dip"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_shop_money"
+                android:textColor="@color/btn_login"
+                android:padding="10dp"
+                android:text="Money"
+                android:layout_marginTop="5dip"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edit_shop_money"
+                android:hint="Money"
+                android:textColor="@color/input_login"
+                android:padding="10dp"
+                android:inputType="number"
+                android:layout_marginTop="10dip"
+                />
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_save_information"
+                android:text="@string/btn_save_profile"
+                android:textSize="15sp"
+                android:background="@color/bg_login"
+                android:layout_marginTop="20dip"
+                android:textAllCaps="false"
+                android:textColor="@color/white"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

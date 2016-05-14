@@ -1,0 +1,99 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:layout_scrollFlags="scroll|enterAlways"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ship_name"
+                android:hint="Name"
+                android:textColor="@color/input_login"
+                android:textColorHint="@color/input_login_hint"
+                android:padding="10dp"
+                android:layout_marginTop="20dip"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ship_phone"
+                android:hint="@string/hint_phone_number"
+                android:textColor="@color/input_login"
+                android:inputType="phone"
+                android:textColorHint="@color/input_login_hint"
+                android:padding="10dp"
+                android:layout_marginTop="20dip"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ship_address"
+                android:hint="Address"
+                android:textColor="@color/input_login"
+                android:textColorHint="@color/input_login_hint"
+                android:padding="10dp"
+                android:layout_marginTop="20dip"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ship_money"
+                android:hint="Money"
+                android:textColor="@color/input_login"
+                android:textColorHint="@color/input_login_hint"
+                android:padding="10dp"
+                android:inputType="number"
+                android:layout_marginTop="20dip" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ship_money_ship"
+                android:hint="Money ship"
+                android:textColor="@color/input_login"
+                android:textColorHint="@color/input_login_hint"
+                android:padding="10dp"
+                android:inputType="number"
+                android:layout_marginTop="20dip" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_ship_add"
+                android:text="Complete"
+                android:textSize="15sp"
+                android:background="@color/bg_register"
+                android:layout_marginTop="20dip"
+                android:textAllCaps="false"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>
