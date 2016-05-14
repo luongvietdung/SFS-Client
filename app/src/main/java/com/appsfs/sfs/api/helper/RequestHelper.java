@@ -15,7 +15,7 @@ import java.util.Map;
  */
 public class RequestHelper {
 //    public static final String API_URL = "https://boiling-oasis-10082.herokuapp.com";
-    public static final String API_URL = "http://192.168.1.81:3000";
+    public static final String API_URL = "http://192.168.1.21:3000";
     private JsonObjectRequest request;
     private int method;
     private JSONObject params;

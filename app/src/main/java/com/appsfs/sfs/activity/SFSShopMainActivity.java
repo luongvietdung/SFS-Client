@@ -88,15 +88,11 @@ public class SFSShopMainActivity extends AppCompatActivity implements OnMapReady
         mMyMarkersArray = new ArrayList<MyMarker>();
 
         mSfsPreference = SFSPreference.getInstance(this);
-        final String username = mSfsPreference.getString("user_phone","");
-
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
         mHeaderView = navigationView.getHeaderView(0);
         mHeaderName = (TextView) mHeaderView.findViewById(R.id.tv_header);
-        mHeaderName.setText(username);
-
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -128,6 +124,7 @@ public class SFSShopMainActivity extends AppCompatActivity implements OnMapReady
         String json = mSfsPreference.getString("user_json","");
         try {
             UserSync userSync = new UserSync(new JSONObject(json));
+            mHeaderName.setText(userSync.getPhone());
             latLng = new LatLng(userSync.getLatitude(),userSync.getLongitude());
             Log.d("","Locatoion " + latLng);
             new GetShipperOnline(SFSShopMainActivity.this,this,this).start();
