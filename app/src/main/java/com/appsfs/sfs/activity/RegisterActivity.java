@@ -110,7 +110,7 @@ public class RegisterActivity extends AppCompatActivity implements Response.List
         if((!Utils.getInstance().isValidPhoneNumber(mPhoneNumbers.getText().toString()))) {
             Utils.getInstance().showDiaglog(RegisterActivity.this,"Error","Phone number error!");
         }
-        else if (mPassword.getText().toString().isEmpty() ||
+        else if (mPassword.getText().toString().length() < 8 ||
                 (!mConfirmPassword.getText().toString().equals(mPassword.getText().toString()))) {
 
             Utils.getInstance().showToast(getApplicationContext(),"Please check information");

@@ -14,6 +14,7 @@ import com.appsfs.sfs.R;
 import com.appsfs.sfs.Utils.SFSPreference;
 import com.appsfs.sfs.Objects.User;
 import com.appsfs.sfs.Utils.Utils;
+import com.appsfs.sfs.api.function.DeleteUser;
 import com.appsfs.sfs.api.function.EditUser;
 import com.appsfs.sfs.api.helper.CustomRespond;
 import com.appsfs.sfs.api.sync.ShipperSync;
@@ -127,24 +128,11 @@ public class EditProfileActivity extends AppCompatActivity implements Response.L
         mButtonDeleteProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*delete table db : user, shop, shipper*/
-//                long ret_user = databaseHelperUser.deleteUserInfo(txtPhone);
-//                if (ret_user != -1) {
-//                    if (role == 0) {
-////                        databaseHelperShipper.deleteShipperInfo(txtPhone);
-//                    } else if (role == 1) {
-////                        databaseHelperShop.deleteShopInfo(txtPhone);
-//                    }
-//
-//                    Utils.getInstance().changeActivity(EditProfileActivity.this,MainActivity.class);
-//                }
+//                Hanh dong nguy hiem chua enable
+//                deleteUser(userSync);
+
             }
         });
-//        mArrayUsers = new ArrayList<User>();
-//        mArrayUsers = databaseHelperUser.getAllUsers();
-
-
-
 
     }
 
@@ -162,9 +150,19 @@ public class EditProfileActivity extends AppCompatActivity implements Response.L
     @Override
     public void onResponse(CustomRespond response) {
         Log.e("SUCCESS", response.getData().toString());
-        mPreference.putString("user_json", response.getData().toString());
-        Utils.getInstance().showToast(EditProfileActivity.this,"Save profile success !");
+        if (response.getFrom().equalsIgnoreCase(DeleteUser.DELETE_USER)) {
+            Utils.getInstance().changeActivity(EditProfileActivity.this,MainActivity.class);
+        } else {
+            mPreference.putString("user_json", response.getData().toString());
+            Utils.getInstance().showToast(EditProfileActivity.this,"Save profile success !");
+        }
 
+    }
+
+    private void deleteUser(UserSync userSync) {
+//        Utils.getInstance().showDiaglog(EditProfileActivity.this,"Delete user!", "Are you sure?");
+        DeleteUser deleteUser = new DeleteUser(EditProfileActivity.this, this, this, userSync);
+        deleteUser.start();
     }
 
 }

@@ -278,7 +278,6 @@ public class SFSShipperMainActivity extends AppCompatActivity implements OnMapRe
             AccessHeader.resetAccessHeader();
             mSfsPreference.putString("user_json", "");
             Utils.getInstance().changeActivity(SFSShipperMainActivity.this, LoginActivity.class);
-            Utils.getInstance().showDiaglog(this,"LOGOUT","PLease log out");
         } else {
             try {
                 shopListSync = new ShopListSync(response.getData());
