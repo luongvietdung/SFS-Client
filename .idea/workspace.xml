@@ -22,32 +22,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="20dbbed0-de86-403b-a0b7-93f2be4ad219" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/helper/CustomJSONRequest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/helper/CustomRespond.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/helper/CustomVolleyError.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/EditProfileActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/EditProfileActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/EditShipperInfomationActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/EditShipperInfomationActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/EditShopInfomationActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/EditShopInfomationActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/LoginActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/LoginActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/RegisterActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/RegisterActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/SFSShipperMainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/SFSShipperMainActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/SFSShopMainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/SFSShopMainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/ShipperInfomationActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/ShipperInfomationActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/ShopInfomationActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/ShopInfomationActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/function/EditShipper.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/function/EditShipper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/function/EditShop.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/function/EditShop.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/function/EditUser.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/function/EditUser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/function/GetAllShopOnline.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/function/GetAllShopOnline.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/function/GetAllUserOnline.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/function/GetAllUserOnline.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/function/GetShipperOnline.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/function/GetShipperOnline.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/function/LoginUser.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/function/LoginUser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/function/LogoutUser.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/function/LogoutUser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/function/RegisterUser.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/function/RegisterUser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/function/UpdateUser.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/function/UpdateUser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/helper/RequestHelper.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/helper/RequestHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/helper/RequestQueueHelper.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/helper/RequestQueueHelper.java" />
     </list>
     <ignored path="SFS-Android.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -67,30 +47,7 @@
     <favorites_list name="SFS-Android" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SFSShipperMainActivity.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/SFSShipperMainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33333334">
-              <caret line="331" column="0" selection-start-line="331" selection-start-column="0" selection-end-line="331" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RequestHelper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/helper/RequestHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="40" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -2645,7 +2602,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/helper/CustomRespone.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/helper/CustomRequest.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/helper/CustomRespond.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/EditProfileActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/function/EditShipper.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/function/EditShop.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/function/EditUser.java" />
@@ -2657,17 +2613,19 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/function/RegisterUser.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/EditShipperInfomationActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/EditShopInfomationActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/RegisterActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/ShipperInfomationActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/ShopInfomationActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/helper/CustomVolleyError.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/helper/CustomJSONRequest.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/LoginActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/SFSShipperMainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/SFSShopMainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/helper/RequestQueueHelper.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/function/LogoutUser.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/helper/RequestHelper.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/RegisterActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/helper/CustomJSONRequest.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/LoginActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/SFSShopMainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/SFSShipperMainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/function/DeleteUser.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/EditProfileActivity.java" />
       </list>
     </option>
   </component>
@@ -2702,9 +2660,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -2773,6 +2731,28 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SFS-Android" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sfs" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="api" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -2821,13 +2801,39 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="function" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SFS-Android" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sfs" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="activity" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -3115,7 +3121,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -3123,7 +3129,7 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.50278884" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3516129" sideWeight="0.49721116" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3516129" sideWeight="0.49721116" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -3179,28 +3185,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/Objects/Shop.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33236152">
-          <caret line="49" column="18" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/Utils/GeolocationUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.373057">
-          <caret line="64" column="16" selection-start-line="64" selection-start-column="8" selection-end-line="64" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/sync/UserSync.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56735754">
-          <caret line="64" column="45" selection-start-line="64" selection-start-column="45" selection-end-line="64" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_shipper_info.xml">
       <provider editor-type-id="android-designer">
         <state />
@@ -3362,13 +3346,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/helper/CustomRespond.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44818652">
-          <caret line="15" column="35" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/volley/src/main/java/com/android/volley/ParseError.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -3445,14 +3422,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/EditProfileActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.9248705">
-          <caret line="32" column="101" selection-start-line="32" selection-start-column="88" selection-end-line="32" selection-end-column="101" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/EditShipperInfomationActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.18393782">
@@ -3475,26 +3444,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/RegisterActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.038860105">
-          <caret line="98" column="40" selection-start-line="98" selection-start-column="40" selection-end-line="98" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/ShopInfomationActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.41709843">
           <caret line="132" column="40" selection-start-line="132" selection-start-column="40" selection-end-line="132" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/ShipperInfomationActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37823835">
-          <caret line="117" column="40" selection-start-line="117" selection-start-column="40" selection-end-line="117" selection-end-column="40" />
           <folding />
         </state>
       </provider>
@@ -3539,7 +3492,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.298387">
           <caret line="254" column="29" selection-start-line="254" selection-start-column="20" selection-end-line="254" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3561,31 +3513,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/helper/CustomJSONRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5967742">
-          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/LoginActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="85" column="5" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/helper/RequestQueueHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6048387">
           <caret line="50" column="25" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="25" />
           <folding>
-            <element signature="e#1449#1613#0" expanded="true" />
-            <element signature="e#1612#1613#0" expanded="true" />
+            <element signature="e#1449#1613#0" expanded="false" />
+            <element signature="e#1612#1613#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3598,28 +3532,107 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/helper/CustomRespond.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44892472">
+          <caret line="15" column="35" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/service/GPSService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38709676">
+          <caret line="54" column="19" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/helper/CustomJSONRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31451613">
+          <caret line="26" column="86" selection-start-line="26" selection-start-column="86" selection-end-line="26" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/SFSShopMainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.516129">
-          <caret line="249" column="76" selection-start-line="249" selection-start-column="76" selection-end-line="249" selection-end-column="76" />
+        <state vertical-scroll-proportion="0.25268817">
+          <caret line="247" column="54" selection-start-line="247" selection-start-column="54" selection-end-line="247" selection-end-column="54" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/helper/RequestHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="40" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.32258064">
+          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="83" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/RegisterActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.4435484">
+          <caret line="112" column="60" selection-start-line="112" selection-start-column="60" selection-end-line="112" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/ShipperInfomationActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.62096775">
+          <caret line="117" column="40" selection-start-line="117" selection-start-column="40" selection-end-line="117" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/LoginActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5967742">
+          <caret line="153" column="9" selection-start-line="153" selection-start-column="9" selection-end-line="153" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/api/function/DeleteUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5564516">
+          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#769#770#0" expanded="true" />
+            <element signature="e#810#811#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/SFSShipperMainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
-          <caret line="331" column="0" selection-start-line="331" selection-start-column="0" selection-end-line="331" selection-end-column="0" />
+          <caret line="223" column="0" selection-start-line="223" selection-start-column="0" selection-end-line="223" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/Utils/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4543011">
+          <caret line="91" column="16" selection-start-line="91" selection-start-column="16" selection-end-line="91" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/appsfs/sfs/activity/EditProfileActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.61290324">
+          <caret line="134" column="11" selection-start-line="134" selection-start-column="11" selection-end-line="134" selection-end-column="11" />
+          <folding>
+            <element signature="e#5370#5577#0" expanded="true" />
+            <element signature="e#5576#5577#0" expanded="true" />
           </folding>
         </state>
       </provider>

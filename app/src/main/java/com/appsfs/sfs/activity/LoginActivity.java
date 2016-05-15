@@ -13,7 +13,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.NetworkError;
+import com.android.volley.NoConnectionError;
+import com.android.volley.ParseError;
 import com.android.volley.Response;
+import com.android.volley.ServerError;
+import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
 import com.appsfs.sfs.R;
 import com.appsfs.sfs.Utils.SFSPreference;
@@ -138,11 +144,20 @@ public class LoginActivity extends AppCompatActivity implements Response.Listene
     @Override
     public void onErrorResponse(VolleyError error) {
         Log.d("TAG", error.getLocalizedMessage());
-//        if(error.networkResponse.statusCode == 401) {
-//            Utils.getInstance().showDiaglog(LoginActivity.this, "Login unsuccessful","Please check username and password!");
-//        } else {
-//            Utils.getInstance().showDiaglog(LoginActivity.this, "Login unsuccessful", "Cannot connect API!");
-//        }
+        if(error instanceof TimeoutError) {
+            Utils.getInstance().showDiaglog(LoginActivity.this, "Login unsuccessful", "Connect time out error!");
+        } else if (error instanceof ServerError || error instanceof ParseError) {
+            Utils.getInstance().showDiaglog(LoginActivity.this, "Login unsuccessful", "We are someting wrong");
+        } else if (error instanceof NetworkError) {
+            Utils.getInstance().showDiaglog(LoginActivity.this, "Login unsuccessful", "Phone or password incorrect");
+
+        } else if (error instanceof NoConnectionError) {
+            Utils.getInstance().showDiaglog(LoginActivity.this, "Login unsuccessful", "Cannot connect server");
+
+        } else if (error instanceof AuthFailureError) {
+            Utils.getInstance().showDiaglog(LoginActivity.this, "Login unsuccessful", "Login fail");
+
+        }
     }
 
     private void startShipper() {
