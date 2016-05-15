@@ -136,11 +136,11 @@ public class LoginActivity extends AppCompatActivity implements Response.Listene
     @Override
     public void onErrorResponse(VolleyError error) {
         Log.d("TAG", "onErrorResponse");
-        if(error.networkResponse.statusCode == 401) {
-            Utils.getInstance().showDiaglog(LoginActivity.this, "Login unsuccessful","Please check username and password!");
-        } else {
-            Utils.getInstance().showDiaglog(LoginActivity.this, "Login unsuccessful", "Cannot connect API!");
-        }
+//        if(error.networkResponse.statusCode == 401) {
+//            Utils.getInstance().showDiaglog(LoginActivity.this, "Login unsuccessful","Please check username and password!");
+//        } else {
+//            Utils.getInstance().showDiaglog(LoginActivity.this, "Login unsuccessful", "Cannot connect API!");
+//        }
     }
 
     private void startShipper() {

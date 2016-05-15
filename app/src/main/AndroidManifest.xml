@@ -72,6 +72,11 @@
             android:theme="@style/AppTheme.NoActionBar"
             android:parentActivityName=".activity.RegisterActivity"/>
 
+        <activity
+            android:name=".activity.EditShipperInfomationActivity"
+            android:label="@string/title_activity_edit_shpper"
+            android:theme="@style/AppTheme.NoActionBar" />
+
         <service android:name=".service.GPSService" />
 
         <meta-data
