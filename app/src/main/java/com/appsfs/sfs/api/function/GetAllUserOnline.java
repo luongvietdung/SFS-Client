@@ -12,8 +12,11 @@ import org.json.JSONObject;
  * Created by dunglv on 5/14/16.
  */
 public class GetAllUserOnline extends RequestHelper {
+
+    public static final String GET_USER_ONLINE = "Get user online";
+
     public GetAllUserOnline(Context context, Response.Listener listener, Response.ErrorListener errorListener) {
-        super(context, "/api/users", Request.Method.GET, new JSONObject(), listener, errorListener);
+        super(context, "/api/users", Request.Method.GET, new JSONObject(), listener, errorListener, GET_USER_ONLINE);
     }
 
     public void start() {

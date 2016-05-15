@@ -17,6 +17,7 @@ import com.appsfs.sfs.Objects.Shop;
 import com.appsfs.sfs.Objects.User;
 import com.appsfs.sfs.Utils.Utils;
 import com.appsfs.sfs.api.function.EditShop;
+import com.appsfs.sfs.api.helper.CustomRespond;
 import com.appsfs.sfs.api.sync.ShopSync;
 import com.appsfs.sfs.api.sync.UserSync;
 import com.appsfs.sfs.database.DatabaseHelperShop;
@@ -30,7 +31,7 @@ import java.util.ArrayList;
 /**
  * Created by longdv on 4/28/16.
  */
-public class EditShopInfomationActivity extends AppCompatActivity implements Response.Listener<JSONObject>, Response.ErrorListener {
+public class EditShopInfomationActivity extends AppCompatActivity implements Response.Listener<CustomRespond>, Response.ErrorListener {
     EditText name,address,product,money;
     Button mButtonSaveInformation;
 //    DatabaseHelperShop databaseHelperShop;
@@ -138,9 +139,9 @@ public class EditShopInfomationActivity extends AppCompatActivity implements Res
     }
 
     @Override
-    public void onResponse(JSONObject response) {
-        Log.e("SUCCESS", response.toString());
-        mPreference.putString("user_json", response.toString());
+    public void onResponse(CustomRespond response) {
+        Log.e("SUCCESS", response.getData().toString());
+        mPreference.putString("user_json", response.getData().toString());
         Utils.getInstance().showToast(EditShopInfomationActivity.this,"Save information success !");
 
     }

@@ -16,6 +16,7 @@ import com.appsfs.sfs.Utils.SFSPreference;
 import com.appsfs.sfs.Utils.Utils;
 import com.appsfs.sfs.api.function.EditShipper;
 import com.appsfs.sfs.api.function.EditShop;
+import com.appsfs.sfs.api.helper.CustomRespond;
 import com.appsfs.sfs.api.sync.ShipperSync;
 import com.appsfs.sfs.api.sync.ShopSync;
 import com.appsfs.sfs.api.sync.UserSync;
@@ -26,7 +27,7 @@ import org.json.JSONObject;
 /**
  * Created by longdv on 4/28/16.
  */
-public class EditShipperInfomationActivity extends AppCompatActivity implements Response.Listener<JSONObject>, Response.ErrorListener{
+public class EditShipperInfomationActivity extends AppCompatActivity implements Response.Listener<CustomRespond>, Response.ErrorListener{
     EditText name, address, money_ship, money;
     Button mButtonSaveInformation;
     SFSPreference mPreference;
@@ -96,9 +97,9 @@ public class EditShipperInfomationActivity extends AppCompatActivity implements 
     }
 
     @Override
-    public void onResponse(JSONObject response) {
+    public void onResponse(CustomRespond response) {
         Log.e("SUCCESS", response.toString());
-        mPreference.putString("user_json", response.toString());
+        mPreference.putString("user_json", response.getData().toString());
         Utils.getInstance().showToast(EditShipperInfomationActivity.this,"Save information success !");
 
     }

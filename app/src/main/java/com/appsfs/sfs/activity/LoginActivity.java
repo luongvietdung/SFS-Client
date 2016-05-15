@@ -23,6 +23,8 @@ import com.appsfs.sfs.Objects.User;
 import com.appsfs.sfs.Utils.Utils;
 import com.appsfs.sfs.api.function.LoginUser;
 import com.appsfs.sfs.api.function.UpdateUser;
+import com.appsfs.sfs.api.helper.CustomRespond;
+import com.appsfs.sfs.api.helper.CustomVolleyError;
 import com.appsfs.sfs.api.sync.ShipperSync;
 import com.appsfs.sfs.api.sync.ShopSync;
 import com.appsfs.sfs.api.sync.UserSync;
@@ -36,7 +38,7 @@ import org.json.JSONObject;
 /**
  * Created by longdv on 4/3/16.
  */
-public class LoginActivity extends AppCompatActivity implements Response.Listener<JSONObject>, Response.ErrorListener {
+public class LoginActivity extends AppCompatActivity implements Response.Listener<CustomRespond>, Response.ErrorListener {
     EditText phoneNumber;
     EditText password;
     Button mButtonLogin;
@@ -85,14 +87,14 @@ public class LoginActivity extends AppCompatActivity implements Response.Listene
 
 
     @Override
-    public void onResponse(JSONObject response) {
+    public void onResponse(CustomRespond response) {
         Log.e("Data","onResponse");
         try {
             Log.e("Data", response.toString());
 
 
-            UserSync userSync = new UserSync(response);
-            mSfsPreference.putString("user_json", response.toString());
+            UserSync userSync = new UserSync(response.getData());
+            mSfsPreference.putString("user_json", response.getData().toString());
 //            mSfsPreference.putInt("current_user",userSync.getAccountable_id());
 //            mSfsPreference.putString("current_user_type",userSync.getAccountable_type());
 //            mSfsPreference.putString("current_user_name",userSync.getPhone());
@@ -135,12 +137,12 @@ public class LoginActivity extends AppCompatActivity implements Response.Listene
 
     @Override
     public void onErrorResponse(VolleyError error) {
-        Log.d("TAG", "onErrorResponse");
-        if(error.networkResponse.statusCode == 401) {
-            Utils.getInstance().showDiaglog(LoginActivity.this, "Login unsuccessful","Please check username and password!");
-        } else {
-            Utils.getInstance().showDiaglog(LoginActivity.this, "Login unsuccessful", "Cannot connect API!");
-        }
+        Log.d("TAG", error.getLocalizedMessage());
+//        if(error.networkResponse.statusCode == 401) {
+//            Utils.getInstance().showDiaglog(LoginActivity.this, "Login unsuccessful","Please check username and password!");
+//        } else {
+//            Utils.getInstance().showDiaglog(LoginActivity.this, "Login unsuccessful", "Cannot connect API!");
+//        }
     }
 
     private void startShipper() {
@@ -163,14 +165,8 @@ public class LoginActivity extends AppCompatActivity implements Response.Listene
         }else if(txtPass.equals("") || txtPass == null){
             Utils.getInstance().showToast(getApplicationContext(), "Password Empty");
         } else {
-            LoginUser loginUser = new LoginUser(txtPhone, txtPass, getApplicationContext(), this, this);
+            LoginUser loginUser = new LoginUser(txtPhone, txtPass, LoginActivity.this, this, this);
             loginUser.start();
-
-//            int id = 26;
-//            double lat =12.2312321;
-//            double lng =80.21321;
-//            UpdateUser updateUser = new UpdateUser(LoginActivity.this,id,lat,lng,this,this);
-//            updateUser.start();
         }
     }
 }

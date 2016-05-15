@@ -81,7 +81,9 @@
 
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyDjglmZnHmHc7AGlkRJDm9LVRwOn54zd8M" />
+            android:value="AIzaSyBO0ee5prlWPVOQk4zmIVimBxvItsfHkgo" />
+            <!--android:value="AIzaSyDjglmZnHmHc7AGlkRJDm9LVRwOn54zd8M"      // key cu cua Long. doi may kia thay key nay vao nhe   -->
+
 
     </application>
 

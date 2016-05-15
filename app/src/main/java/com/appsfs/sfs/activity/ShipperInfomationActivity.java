@@ -16,6 +16,7 @@ import com.appsfs.sfs.Utils.SFSPreference;
 import com.appsfs.sfs.Objects.Shipper;
 import com.appsfs.sfs.Utils.Utils;
 import com.appsfs.sfs.api.function.RegisterUser;
+import com.appsfs.sfs.api.helper.CustomRespond;
 import com.appsfs.sfs.database.DatabaseHelperShipper;
 import com.appsfs.sfs.database.DatabaseHelperUser;
 
@@ -24,7 +25,7 @@ import org.json.JSONObject;
 /**
  * Created by longdv on 4/21/16.
  */
-public class ShipperInfomationActivity extends AppCompatActivity implements Response.Listener<JSONObject>, Response.ErrorListener{
+public class ShipperInfomationActivity extends AppCompatActivity implements Response.Listener<CustomRespond>, Response.ErrorListener{
     EditText mNameShipper,mPhoneShipper,mAddress,mMoney,mMoneyShip;
     SFSPreference mSfsPreference;
     Button mButtonComplete;
@@ -114,7 +115,7 @@ public class ShipperInfomationActivity extends AppCompatActivity implements Resp
     }
 
     @Override
-    public void onResponse(JSONObject response) {
+    public void onResponse(CustomRespond response) {
         // Insert to database local
         Utils.getInstance().changeActivity(ShipperInfomationActivity.this,LoginActivity.class);
     }

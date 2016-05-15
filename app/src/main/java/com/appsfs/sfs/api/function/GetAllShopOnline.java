@@ -12,8 +12,11 @@ import org.json.JSONObject;
  * Created by dunglv on 5/14/16.
  */
 public class GetAllShopOnline extends RequestHelper {
+
+    public static final String GET_SHOP_ONLINE = "Get shop online";
+
     public GetAllShopOnline(Context context, Response.Listener listener, Response.ErrorListener errorListener) {
-        super(context, "/api/shops", Request.Method.GET, new JSONObject(), listener, errorListener);
+        super(context, "/api/shops", Request.Method.GET, new JSONObject(), listener, errorListener, GET_SHOP_ONLINE);
     }
 
     public void start() {

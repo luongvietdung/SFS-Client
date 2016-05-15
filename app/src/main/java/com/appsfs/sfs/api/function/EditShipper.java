@@ -14,10 +14,11 @@ import org.json.JSONObject;
  * Created by dunglv on 5/15/16.
  */
 public class EditShipper {
+    public static final String EDIT_SHIPPER = "Edit Shipper";
     private RequestHelper requestHelper;
 
     public EditShipper(Context context, Response.Listener listener, Response.ErrorListener errorListener, Shipper shipper) {
-        this.requestHelper = new RequestHelper(context, "/api/shippers/" + shipper.getId(), Request.Method.PUT, params(shipper), listener, errorListener);
+        this.requestHelper = new RequestHelper(context, "/api/shippers/" + shipper.getId(), Request.Method.PUT, params(shipper), listener, errorListener, EDIT_SHIPPER);
     }
 
     public void start() {
