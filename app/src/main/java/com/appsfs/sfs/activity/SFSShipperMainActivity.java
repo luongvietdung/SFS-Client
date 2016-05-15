@@ -99,14 +99,14 @@ public class SFSShipperMainActivity extends AppCompatActivity implements OnMapRe
         mHeaderView = navigationView.getHeaderView(0);
         mHeaderName = (TextView) mHeaderView.findViewById(R.id.tv_header);
 
-        Menu menu = navigationView.getMenu();
-        for (int i = 0; i < menu.size(); i++) {
-
-            if (menu.getItem(i).getItemId() == R.id.navigation_item_edit_information){
-                menu.getItem(i).setVisible(false);
-            }
-
-        }
+//        Menu menu = navigationView.getMenu();
+//        for (int i = 0; i < menu.size(); i++) {
+//
+////            if (menu.getItem(i).getItemId() == R.id.navigation_item_edit_information){
+////                menu.getItem(i).setVisible(false);
+////            }
+//
+//        }
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
@@ -119,6 +119,8 @@ public class SFSShipperMainActivity extends AppCompatActivity implements OnMapRe
                         startActivity(i);
                         return true;
                     case R.id.navigation_item_edit_information:
+                        Intent i1 = new Intent(SFSShipperMainActivity.this, EditShipperInfomationActivity.class);
+                        startActivity(i1);
                         return true;
                     case R.id.navigation_item_about:
                         Toast.makeText(SFSShipperMainActivity.this, menuItem.getTitle(), Toast.LENGTH_LONG).show();
