@@ -12,8 +12,11 @@ import org.json.JSONObject;
  * Created by dunglv on 5/14/16.
  */
 public class GetShipperOnline extends RequestHelper {
+
+    public static final String GET_SHIPPER_ONLINE = "Get shipper online";
+
     public GetShipperOnline(Context context, Response.Listener listener, Response.ErrorListener errorListener) {
-        super(context, "/api/shippers", Request.Method.GET, new JSONObject(), listener, errorListener);
+        super(context, "/api/shippers", Request.Method.GET, new JSONObject(), listener, errorListener, GET_SHIPPER_ONLINE);
     }
 
     public void start() {

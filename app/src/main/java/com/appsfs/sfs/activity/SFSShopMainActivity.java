@@ -29,6 +29,8 @@ import com.appsfs.sfs.Objects.Shop;
 import com.appsfs.sfs.Utils.Utils;
 import com.appsfs.sfs.api.function.GetShipperOnline;
 import com.appsfs.sfs.api.function.LogoutUser;
+import com.appsfs.sfs.api.helper.AccessHeader;
+import com.appsfs.sfs.api.helper.CustomRespond;
 import com.appsfs.sfs.api.helper.RequestHelper;
 import com.appsfs.sfs.api.sync.ShipperListSync;
 import com.appsfs.sfs.api.sync.ShipperSync;
@@ -58,7 +60,7 @@ import java.util.Objects;
 /**
  * Created by longdv on 4/10/16.
  */
-public class SFSShopMainActivity extends AppCompatActivity implements OnMapReadyCallback,Response.Listener<JSONObject>,Response.ErrorListener {
+public class SFSShopMainActivity extends AppCompatActivity implements OnMapReadyCallback,Response.Listener<CustomRespond>,Response.ErrorListener {
     private DrawerLayout mDrawerLayout;
     private GoogleMap mMap;
     private TextView mHeaderName;
@@ -240,23 +242,31 @@ public class SFSShopMainActivity extends AppCompatActivity implements OnMapReady
     }
 
     @Override
-    public void onResponse(JSONObject response) {
+    public void onResponse(CustomRespond response) {
+        if (response.getFrom().equalsIgnoreCase(LogoutUser.SIGN_OUT_USER)) {
+            AccessHeader.resetAccessHeader();
+            mSfsPreference.putString("user_json", "");
+            Utils.getInstance().changeActivity(SFSShopMainActivity.this, LoginActivity.class);
+            Utils.getInstance().showDiaglog(this,"LOGOUT","PLease log out");
+        } else {
+            try {
+                shipperListSync = new ShipperListSync(response.getData());
+                Log.e("TAG","respone: " + response);
 
-        try {
-            shipperListSync = new ShipperListSync(response);
-            Log.e("TAG","respone: " + response);
+            } catch (Exception e) {
+                Log.d("shipper null",e.getLocalizedMessage());
 
-        } catch (Exception e) {
-            Log.d("shipper null",e.getLocalizedMessage());
-
-        }
+            }
         /*Google map*/
-        if (Utils.getInstance().checkNetworkState(SFSShopMainActivity.this) == true) {
-            SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-            mapFragment.getMapAsync(this);
-        }  else {
-            Utils.getInstance().showDiaglog(this,"NO INTERNET!","Please check your device's connection settings");
+            if (Utils.getInstance().checkNetworkState(SFSShopMainActivity.this) == true) {
+                SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+                mapFragment.getMapAsync(this);
+            }  else {
+                Utils.getInstance().showDiaglog(this,"NO INTERNET!","Please check your device's connection settings");
+            }
+
         }
+
 
 //        Utils.getInstance().changeActivity(SFSShopMainActivity.this, LoginActivity.class);
 

@@ -16,10 +16,11 @@ import org.json.JSONObject;
 public class UpdateUser {
 
 
+    public static final String UPDATE_LOCATION = "Update location";
     private RequestHelper requestHelper;
 
      public UpdateUser(Context context,int id,double lat, double lng,Response.Listener listener, Response.ErrorListener errorListener) {
-         requestHelper = new RequestHelper(context,"/api/users/" + id, Request.Method.PUT, creatParams(lat,lng), listener, errorListener);
+         requestHelper = new RequestHelper(context,"/api/users/" + id, Request.Method.PUT, creatParams(lat,lng), listener, errorListener, UPDATE_LOCATION);
 
      }
 

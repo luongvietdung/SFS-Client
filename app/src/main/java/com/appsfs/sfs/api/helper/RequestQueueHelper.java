@@ -48,6 +48,15 @@ public class RequestQueueHelper {
         }
     }
 
+    public void cancelAll() {
+        requestQueue.cancelAll(new RequestQueue.RequestFilter() {
+            @Override
+            public boolean apply(Request<?> request) {
+                return true;
+            }
+        });
+    }
+
     public static synchronized RequestQueueHelper getInstance(Context context) {
         if (requestQueueHelper == null) {
             requestQueueHelper = new RequestQueueHelper(context);

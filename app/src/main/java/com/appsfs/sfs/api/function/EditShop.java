@@ -13,10 +13,11 @@ import org.json.JSONObject;
  * Created by dunglv on 5/15/16.
  */
 public class EditShop {
+    public static final String EDIT_SHOP = "Edit Shop";
     private RequestHelper requestHelper;
 
     public EditShop(Context context, Response.Listener listener, Response.ErrorListener errorListener, Shop shop) {
-        this.requestHelper = new RequestHelper(context, "/api/shops/" + shop.getId(), Request.Method.PUT, params(shop), listener, errorListener);
+        this.requestHelper = new RequestHelper(context, "/api/shops/" + shop.getId(), Request.Method.PUT, params(shop), listener, errorListener, EDIT_SHOP);
     }
 
     public void start() {

@@ -30,6 +30,8 @@ import com.appsfs.sfs.Utils.Utils;
 import com.appsfs.sfs.api.function.GetAllShopOnline;
 import com.appsfs.sfs.api.function.GetShipperOnline;
 import com.appsfs.sfs.api.function.LogoutUser;
+import com.appsfs.sfs.api.helper.AccessHeader;
+import com.appsfs.sfs.api.helper.CustomRespond;
 import com.appsfs.sfs.api.sync.ShipperListSync;
 import com.appsfs.sfs.api.sync.ShipperSync;
 import com.appsfs.sfs.api.sync.ShopListSync;
@@ -61,7 +63,7 @@ import java.util.List;
 /**
  * Created by longdv on 4/24/16.
  */
-public class SFSShipperMainActivity extends AppCompatActivity implements OnMapReadyCallback,Response.Listener<JSONObject>,Response.ErrorListener {
+public class SFSShipperMainActivity extends AppCompatActivity implements OnMapReadyCallback,Response.Listener<CustomRespond>,Response.ErrorListener {
     private DrawerLayout mDrawerLayout;
     private GoogleMap mMap;
     private TextView mHeaderName;
@@ -271,24 +273,31 @@ public class SFSShipperMainActivity extends AppCompatActivity implements OnMapRe
     }
 
     @Override
-    public void onResponse(JSONObject response) {
+    public void onResponse(CustomRespond response) {
+        if (response.getFrom().equalsIgnoreCase(LogoutUser.SIGN_OUT_USER)) {
+            AccessHeader.resetAccessHeader();
+            mSfsPreference.putString("user_json", "");
+            Utils.getInstance().changeActivity(SFSShipperMainActivity.this, LoginActivity.class);
+            Utils.getInstance().showDiaglog(this,"LOGOUT","PLease log out");
+        } else {
+            try {
+                shopListSync = new ShopListSync(response.getData());
 
-        try {
-            shopListSync = new ShopListSync(response);
+                Log.e("TAG","respone: " + response.getData().toString());
 
-            Log.e("TAG","respone: " + response);
+            } catch (Exception e) {
+                Log.d("shipper null",e.getLocalizedMessage());
 
-        } catch (Exception e) {
-            Log.d("shipper null",e.getLocalizedMessage());
-
-        }
+            }
         /*Google map*/
-        if (Utils.getInstance().checkNetworkState(SFSShipperMainActivity.this) == true) {
-            SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-            mapFragment.getMapAsync(this);
-        }  else {
-            Utils.getInstance().showDiaglog(this,"NO INTERNET!","Please check your device's connection settings");
+            if (Utils.getInstance().checkNetworkState(SFSShipperMainActivity.this) == true) {
+                SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+                mapFragment.getMapAsync(this);
+            }  else {
+                Utils.getInstance().showDiaglog(this,"NO INTERNET!","Please check your device's connection settings");
+            }
         }
+
 
 
     }

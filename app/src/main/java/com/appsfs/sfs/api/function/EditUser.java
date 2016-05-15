@@ -15,10 +15,11 @@ import org.json.JSONObject;
  * Created by dunglv on 5/15/16.
  */
 public class EditUser {
+    public static final String EDIT_USER = "Edit User";
     private RequestHelper requestHelper;
 
     public EditUser(Context context, Response.Listener listener, Response.ErrorListener errorListener, User user, UserSync userSync) {
-        this.requestHelper = new RequestHelper(context, "/api/users/" + user.getId(), Request.Method.PUT, params(user, userSync), listener, errorListener);
+        this.requestHelper = new RequestHelper(context, "/api/users/" + user.getId(), Request.Method.PUT, params(user, userSync), listener, errorListener, EDIT_USER);
     }
 
     public void start() {

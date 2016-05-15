@@ -18,6 +18,7 @@ import com.appsfs.sfs.Utils.SFSPreference;
 import com.appsfs.sfs.Objects.Shop;
 import com.appsfs.sfs.Utils.Utils;
 import com.appsfs.sfs.api.function.RegisterUser;
+import com.appsfs.sfs.api.helper.CustomRespond;
 import com.appsfs.sfs.api.sync.ShopSync;
 import com.appsfs.sfs.database.DatabaseHelperShop;
 import com.appsfs.sfs.database.DatabaseHelperUser;
@@ -28,7 +29,7 @@ import org.json.JSONObject;
 /**
  * Created by longdv on 4/20/16.
  */
-public class ShopInfomationActivity extends AppCompatActivity implements Response.Listener<JSONObject>, Response.ErrorListener{
+public class ShopInfomationActivity extends AppCompatActivity implements Response.Listener<CustomRespond>, Response.ErrorListener{
     EditText mNameShop,mPhoneShop,mAddressShop,mProduct,mMoney;
     SFSPreference mSfsPreference;
     Button mButtonComplete;
@@ -129,7 +130,7 @@ public class ShopInfomationActivity extends AppCompatActivity implements Respons
     }
 
     @Override
-    public void onResponse(JSONObject response) {
+    public void onResponse(CustomRespond response) {
         Utils.getInstance().changeActivity(ShopInfomationActivity.this,LoginActivity.class);
     }
 

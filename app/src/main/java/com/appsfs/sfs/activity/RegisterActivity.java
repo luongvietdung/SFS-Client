@@ -18,6 +18,7 @@ import com.appsfs.sfs.R;
 import com.appsfs.sfs.Utils.SFSPreference;
 import com.appsfs.sfs.Objects.User;
 import com.appsfs.sfs.Utils.Utils;
+import com.appsfs.sfs.api.helper.CustomRespond;
 import com.appsfs.sfs.database.DatabaseHelperUser;
 
 import org.json.JSONObject;
@@ -25,7 +26,7 @@ import org.json.JSONObject;
 /**
  * Created by longdv on 4/3/16.
  */
-public class RegisterActivity extends AppCompatActivity implements Response.Listener<JSONObject>, Response.ErrorListener{
+public class RegisterActivity extends AppCompatActivity implements Response.Listener<CustomRespond>, Response.ErrorListener{
     EditText mEmail,mPhoneNumbers,mPassword,mConfirmPassword;
     RadioButton radioShipper,radioShop;
     RadioGroup radioGroup;
@@ -95,7 +96,7 @@ public class RegisterActivity extends AppCompatActivity implements Response.List
     }
 
     @Override
-    public void onResponse(JSONObject response) {
+    public void onResponse(CustomRespond response) {
 
     }
 

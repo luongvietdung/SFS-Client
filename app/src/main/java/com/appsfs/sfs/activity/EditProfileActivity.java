@@ -15,6 +15,7 @@ import com.appsfs.sfs.Utils.SFSPreference;
 import com.appsfs.sfs.Objects.User;
 import com.appsfs.sfs.Utils.Utils;
 import com.appsfs.sfs.api.function.EditUser;
+import com.appsfs.sfs.api.helper.CustomRespond;
 import com.appsfs.sfs.api.sync.ShipperSync;
 import com.appsfs.sfs.api.sync.UserSync;
 import com.appsfs.sfs.database.DatabaseHelperShipper;
@@ -29,7 +30,7 @@ import java.util.ArrayList;
 /**
  * Created by longdv on 4/18/16.
  */
-public class EditProfileActivity extends AppCompatActivity implements Response.Listener<JSONObject>, Response.ErrorListener{
+public class EditProfileActivity extends AppCompatActivity implements Response.Listener<CustomRespond>, Response.ErrorListener{
 
     EditText phone_number,password, confirm_password;
     Button mButtonSaveProfile,mButtonDeleteProfile;
@@ -159,10 +160,11 @@ public class EditProfileActivity extends AppCompatActivity implements Response.L
     }
 
     @Override
-    public void onResponse(JSONObject response) {
-        Log.e("SUCCESS", response.toString());
-        mPreference.putString("user_json", response.toString());
+    public void onResponse(CustomRespond response) {
+        Log.e("SUCCESS", response.getData().toString());
+        mPreference.putString("user_json", response.getData().toString());
         Utils.getInstance().showToast(EditProfileActivity.this,"Save profile success !");
 
     }
+
 }
