@@ -221,7 +221,8 @@ public class SFSShipperMainActivity extends AppCompatActivity implements OnMapRe
     @Override
     public void onDestroy() {
         super.onDestroy();
-        mMap.clear();
+        if (mMap != null)
+            mMap.clear();
     }
 
 
@@ -277,7 +278,8 @@ public class SFSShipperMainActivity extends AppCompatActivity implements OnMapRe
         if (response.getFrom().equalsIgnoreCase(LogoutUser.SIGN_OUT_USER)) {
             AccessHeader.resetAccessHeader();
             mSfsPreference.putString("user_json", "");
-            Utils.getInstance().changeActivity(SFSShipperMainActivity.this, LoginActivity.class);
+            mSfsPreference.putInt("current_id_user", 0);
+            Utils.getInstance().changeActivity(SFSShipperMainActivity.this, MainActivity.class);
         } else {
             try {
                 shopListSync = new ShopListSync(response.getData());

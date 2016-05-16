@@ -129,7 +129,7 @@ public class EditProfileActivity extends AppCompatActivity implements Response.L
             @Override
             public void onClick(View v) {
 //                Hanh dong nguy hiem chua enable
-//                deleteUser(userSync);
+                deleteUser(userSync);
 
             }
         });
