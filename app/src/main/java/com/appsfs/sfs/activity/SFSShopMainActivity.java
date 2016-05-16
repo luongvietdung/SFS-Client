@@ -246,7 +246,8 @@ public class SFSShopMainActivity extends AppCompatActivity implements OnMapReady
         if (response.getFrom().equalsIgnoreCase(LogoutUser.SIGN_OUT_USER)) {
             AccessHeader.resetAccessHeader();
             mSfsPreference.putString("user_json", "");
-            Utils.getInstance().changeActivity(SFSShopMainActivity.this, LoginActivity.class);
+            mSfsPreference.putInt("current_id_user", 0);
+            Utils.getInstance().changeActivity(SFSShopMainActivity.this, MainActivity.class);
         } else {
             try {
                 shipperListSync = new ShipperListSync(response.getData());
@@ -315,4 +316,10 @@ public class SFSShopMainActivity extends AppCompatActivity implements OnMapReady
         logoutUser.start();
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mMap != null)
+            mMap.clear();
+    }
 }
