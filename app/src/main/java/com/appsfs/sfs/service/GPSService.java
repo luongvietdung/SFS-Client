@@ -139,6 +139,8 @@ public class GPSService extends Service implements Response.Listener, Response.E
             }
 
         }
+
+        stopSelf();
     }
 
 

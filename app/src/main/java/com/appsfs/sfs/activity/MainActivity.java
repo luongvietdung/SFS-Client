@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button mButtonStartLogin;
     Button mButtonStartRegister;
-    boolean isGPS;
+    boolean isGPS,isNetwork;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,14 +32,28 @@ public class MainActivity extends AppCompatActivity {
         mButtonStartRegister = (Button) findViewById(R.id.btn_start_register);
 
         isGPS = isGPSEnabled(getApplicationContext()); /* Check turn on GPS */
+        isNetwork = Utils.getInstance().checkNetworkState(getApplicationContext()); /* Check turn on GPS */
         if (!isGPS) {
             Utils.getInstance().showEnableGPSDiaglog(MainActivity.this, "Location Service Disabled", "Please enable location services");
+            if (isNetwork == true) {
+                mButtonStartLogin.setOnClickListener(handlerClickButton);
+                mButtonStartRegister.setOnClickListener(handlerClickButton);
+            } else {
+                Utils.getInstance().showDiaglog(MainActivity.this, "Network Disabled", "Please turn on Wifi or 3G");
+
+            }
+
+        } else {
+            if (isNetwork == true) {
+                mButtonStartLogin.setOnClickListener(handlerClickButton);
+                mButtonStartRegister.setOnClickListener(handlerClickButton);
+            } else {
+                Utils.getInstance().showDiaglog(MainActivity.this, "Network Disabled", "Please turn on Wifi or 3G");
+
+            }
             mButtonStartLogin.setOnClickListener(handlerClickButton);
             mButtonStartRegister.setOnClickListener(handlerClickButton);
 
-        } else {
-            mButtonStartLogin.setOnClickListener(handlerClickButton);
-            mButtonStartRegister.setOnClickListener(handlerClickButton);
         }
     }
 

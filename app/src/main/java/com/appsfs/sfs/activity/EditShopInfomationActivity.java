@@ -34,9 +34,8 @@ import java.util.ArrayList;
 public class EditShopInfomationActivity extends AppCompatActivity implements Response.Listener<CustomRespond>, Response.ErrorListener {
     EditText name,address,product,money;
     Button mButtonSaveInformation;
-//    DatabaseHelperShop databaseHelperShop;
+
     SFSPreference mPreference;
-//    ArrayList<User> mArrayUsers;
     ShopSync shopSync;
 
     @Override
@@ -56,7 +55,6 @@ public class EditShopInfomationActivity extends AppCompatActivity implements Res
             }
         });
 
-//        databaseHelperShop = DatabaseHelperShop.getInstance(EditShopInfomationActivity.this);
         mPreference = SFSPreference.getInstance(EditShopInfomationActivity.this);
 
         name = (EditText) findViewById(R.id.edit_shop_name);
@@ -108,13 +106,6 @@ public class EditShopInfomationActivity extends AppCompatActivity implements Res
 
                     requestEditShop(shop);
 
-//                    boolean isUpdate = databaseHelperShop.updatePhoneInformation(txtPhone,shop);
-//                    if (isUpdate) {
-//                        Utils.getInstance().showToast(EditShopInfomationActivity.this,"Save information success !");
-//
-//                    } else {
-//                        Utils.getInstance().showToast(EditShopInfomationActivity.this,"Save information fail!");
-//                    }
 
                 }
             }

@@ -76,11 +76,6 @@ public class LoginActivity extends AppCompatActivity implements Response.Listene
         mButtonLogin = (Button) findViewById(R.id.btn_login);
         mSfsPreference = SFSPreference.getInstance(this);
 
-//        databaseHelperUser = DatabaseHelperUser.getInstance(getApplicationContext());
-//        databaseHelperShipper = DatabaseHelperShipper.getInstance(getApplicationContext());
-//        databaseHelperShop = DatabaseHelperShop.getInstance(getApplicationContext());
-
-
         mButtonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

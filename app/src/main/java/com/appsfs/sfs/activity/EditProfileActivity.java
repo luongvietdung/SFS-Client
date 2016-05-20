@@ -36,9 +36,7 @@ public class EditProfileActivity extends AppCompatActivity implements Response.L
     EditText phone_number,password, confirm_password;
     Button mButtonSaveProfile,mButtonDeleteProfile;
     UserSync userSync;
-//    DatabaseHelperUser databaseHelperUser;
-//    DatabaseHelperShipper databaseHelperShipper;
-//    DatabaseHelperShop databaseHelperShop;
+
     SFSPreference mPreference;
     ArrayList<User> mArrayUsers;
     @Override
@@ -73,18 +71,6 @@ public class EditProfileActivity extends AppCompatActivity implements Response.L
             e.getMessage();
         }
 
-//        databaseHelperUser = DatabaseHelperUser.getInstance(getApplicationContext());
-//        databaseHelperShipper = DatabaseHelperShipper.getInstance(getApplicationContext());
-//        databaseHelperShop = DatabaseHelperShop.getInstance(getApplicationContext());
-
-
-//        final String txtPhone = mPreference.getString("user_phone","");
-//        String txtEmail = mPreference.getString("user_email","");
-//        final int role = 0;
-//        mPreference.getInt("user_role", role);
-//        phone_number.setText(txtPhone);
-//        email.setText(txtEmail);
-
         mButtonSaveProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -101,27 +87,6 @@ public class EditProfileActivity extends AppCompatActivity implements Response.L
                     user.setPassword(password.getText().toString());
                     requestAPI(user, userSync);
                 }
-                /*Update table db : user, shop, shipper*/
-//                if (phone_number.getText().toString().equals("") ||
-//                        email.getText().toString().equals("")) {
-//
-//                } else {
-//                    boolean isOk = databaseHelperUser.updatePhoneNumber(txtPhone,
-//                                                                        phone_number.getText().toString(),
-//                                                                        email.getText().toString());
-//                    if (isOk) {
-//                        if (role == 0) {
-//                            databaseHelperShipper.updatePhoneNumber(txtPhone, phone_number.getText().toString());
-//                        } else if (role == 1) {
-//                            databaseHelperShop.updatePhoneNumber(txtPhone, phone_number.getText().toString());;
-//                        }
-//
-//                        Utils.getInstance().showToast(EditProfileActivity.this,"Edit profile success!");
-//
-//                    }
-//                }
-
-
             }
         });
 
