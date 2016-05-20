@@ -77,12 +77,28 @@
             android:label="@string/title_activity_edit_shpper"
             android:theme="@style/AppTheme.NoActionBar" />
 
+        <activity
+            android:name=".activity.CreateOrdersActivity"
+            android:label="Create Orders"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".activity.CheckOrdersActivity"
+            android:label="Check Orders"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".activity.DetailOrdersActivity"
+            android:label="Detail Orders"
+            android:theme="@style/AppTheme.NoActionBar" />
+
         <service android:name=".service.GPSService" />
 
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyBO0ee5prlWPVOQk4zmIVimBxvItsfHkgo" />
-            <!--android:value="AIzaSyDjglmZnHmHc7AGlkRJDm9LVRwOn54zd8M"      // key cu cua Long. doi may kia thay key nay vao nhe   -->
+            android:value="AIzaSyDjglmZnHmHc7AGlkRJDm9LVRwOn54zd8M"
+           />
+       <!-- android:value="AIzaSyBO0ee5prlWPVOQk4zmIVimBxvItsfHkgo" // key cu cua Long. doi may kia thay key nay vao nhe-->
 
 
     </application>

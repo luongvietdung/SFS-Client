@@ -38,6 +38,7 @@ import com.appsfs.sfs.api.sync.UserSync;
 import com.appsfs.sfs.database.DatabaseHelperShipper;
 import com.appsfs.sfs.database.DatabaseHelperShop;
 import com.appsfs.sfs.database.DatabaseHelperUser;
+import com.appsfs.sfs.service.GPSService;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -111,11 +112,18 @@ public class SFSShopMainActivity extends AppCompatActivity implements OnMapReady
                         Intent i1 = new Intent(SFSShopMainActivity.this, EditShopInfomationActivity.class);
                         startActivity(i1);
                         return true;
-                    case R.id.navigation_item_about:
-                        Toast.makeText(SFSShopMainActivity.this, menuItem.getTitle(), Toast.LENGTH_LONG).show();
+                    case R.id.navigation_item_order:
+                        Intent i2 = new Intent(SFSShopMainActivity.this, CreateOrdersActivity.class);
+                        startActivity(i2);
+                        return true;
+
+                    case R.id.navigation_item_detail_order:
+                        Intent i3 = new Intent(SFSShopMainActivity.this, DetailOrdersActivity.class);
+                        startActivity(i3);
                         return true;
                     case R.id.navigation_item_signout:
                         clickLogout();
+                        return true;
 
                     default:
                         return true;
@@ -159,7 +167,7 @@ public class SFSShopMainActivity extends AppCompatActivity implements OnMapReady
         mMap = googleMap;
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 
-        marker = mMap.addMarker(new MarkerOptions().position(latLng));
+        Marker marker = mMap.addMarker(new MarkerOptions().position(latLng));
         marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.icon_shop));
 
 
@@ -314,6 +322,7 @@ public class SFSShopMainActivity extends AppCompatActivity implements OnMapReady
     private  void clickLogout() {
         LogoutUser logoutUser = new LogoutUser(SFSShopMainActivity.this,this,this);
         logoutUser.start();
+        stopService(new Intent(SFSShopMainActivity.this, GPSService.class));
     }
 
     @Override

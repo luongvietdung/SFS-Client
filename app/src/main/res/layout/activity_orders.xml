@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:layout_scrollFlags="scroll|enterAlways"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_code_orders"
+                android:text="Code order"
+                android:textColor="@color/btn_login"
+                android:padding="10dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edit_code_order"
+                android:textColor="@color/input_login"
+                android:inputType="text"
+                android:hint="Code order"
+                android:textColorHint="@color/input_login_hint"
+                android:layout_marginTop="5dip"
+                android:padding="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_phone_customer"
+                android:textColor="@color/btn_login"
+                android:padding="10dp"
+                android:text="Phone customer"
+                android:layout_marginTop="5dip"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edit_phone_customer"
+                android:inputType="phone"
+                android:hint="Phone customer"
+                android:textColor="@color/input_login"
+                android:padding="10dp"
+                android:layout_marginTop="10dip"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_phone_shipper"
+                android:textColor="@color/btn_login"
+                android:padding="10dp"
+                android:text="Phone shipper"
+                android:layout_marginTop="10dip"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edit_phone_shipper"
+                android:textColor="@color/input_login"
+                android:padding="10dp"
+                android:hint="Phone shipper"
+                android:layout_marginTop="10dip"
+                android:inputType="phone"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_check_code_orders"
+                android:textColor="@color/btn_login"
+                android:padding="10dp"
+                android:text="Code check"
+                android:layout_marginTop="5dip"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edit_code_check_order"
+                android:textColor="@color/input_login"
+                android:padding="10dp"
+                android:hint="Code check"
+                android:inputType="number"
+                android:layout_marginTop="10dip"
+                />
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_create_orders"
+                android:text="Create"
+                android:textSize="15sp"
+                android:background="@color/bg_login"
+                android:layout_marginTop="20dip"
+                android:textAllCaps="false"
+                android:textColor="@color/white"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

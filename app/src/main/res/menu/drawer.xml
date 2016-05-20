@@ -11,10 +11,16 @@
             android:id="@+id/navigation_item_edit_information"
             android:icon="@drawable/icon_edit"
             android:title="Edit infomation" />
+
         <item
-            android:id="@+id/navigation_item_about"
+            android:id="@+id/navigation_item_order"
+            android:icon="@drawable/icon_order"
+            android:title="Orders" />
+
+        <item
+            android:id="@+id/navigation_item_detail_order"
             android:icon="@drawable/icon_about"
-            android:title="About" />
+            android:title="Details" />
 
         <item
             android:id="@+id/navigation_item_signout"

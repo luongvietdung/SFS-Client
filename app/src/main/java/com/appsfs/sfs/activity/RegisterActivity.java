@@ -31,7 +31,6 @@ public class RegisterActivity extends AppCompatActivity implements Response.List
     RadioButton radioShipper,radioShop;
     RadioGroup radioGroup;
     Button mButtonNext;
-    DatabaseHelperUser databaseHelperUser;
     int type_user = 0;     // O: shipper
                             // 1: Shop
                             // -1 : not create
@@ -106,14 +105,13 @@ public class RegisterActivity extends AppCompatActivity implements Response.List
     }
 
     private void onNextClick() {
-        databaseHelperUser = DatabaseHelperUser.getInstance(RegisterActivity.this);
         if((!Utils.getInstance().isValidPhoneNumber(mPhoneNumbers.getText().toString()))) {
             Utils.getInstance().showDiaglog(RegisterActivity.this,"Error","Phone number error!");
         }
         else if (mPassword.getText().toString().length() < 8 ||
                 (!mConfirmPassword.getText().toString().equals(mPassword.getText().toString()))) {
 
-            Utils.getInstance().showToast(getApplicationContext(),"Please check information");
+            Utils.getInstance().showToast(getApplicationContext(),"Password length 8 characters or more!");
         }
         else {
             mSfsPreference.putString("pre_phone_number",mPhoneNumbers.getText().toString());
