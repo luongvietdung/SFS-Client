@@ -27,6 +27,7 @@ import com.appsfs.sfs.Utils.SFSPreference;
 import com.appsfs.sfs.Objects.Shipper;
 import com.appsfs.sfs.Objects.Shop;
 import com.appsfs.sfs.Utils.Utils;
+import com.appsfs.sfs.api.function.GetCodeOrder;
 import com.appsfs.sfs.api.function.GetShipperOnline;
 import com.appsfs.sfs.api.function.LogoutUser;
 import com.appsfs.sfs.api.helper.AccessHeader;
@@ -50,6 +51,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.lang.reflect.Array;
@@ -68,6 +70,7 @@ public class SFSShopMainActivity extends AppCompatActivity implements OnMapReady
     SFSPreference mSfsPreference;
     private View mHeaderView;
     LatLng latLng = null;
+    UserSync userSync;
 
     ShipperListSync shipperListSync;
     Marker marker;
@@ -113,13 +116,13 @@ public class SFSShopMainActivity extends AppCompatActivity implements OnMapReady
                         startActivity(i1);
                         return true;
                     case R.id.navigation_item_order:
-                        Intent i2 = new Intent(SFSShopMainActivity.this, CreateOrdersActivity.class);
-                        startActivity(i2);
+                        getNewCodeOrder();
                         return true;
 
                     case R.id.navigation_item_detail_order:
-                        Intent i3 = new Intent(SFSShopMainActivity.this, DetailOrdersActivity.class);
-                        startActivity(i3);
+
+                        startDetailOrder();
+//                        getNewCodeOrder();
                         return true;
                     case R.id.navigation_item_signout:
                         clickLogout();
@@ -133,7 +136,7 @@ public class SFSShopMainActivity extends AppCompatActivity implements OnMapReady
 
         String json = mSfsPreference.getString("user_json","");
         try {
-            UserSync userSync = new UserSync(new JSONObject(json));
+            userSync = new UserSync(new JSONObject(json));
             mHeaderName.setText(userSync.getPhone());
             latLng = new LatLng(userSync.getLatitude(),userSync.getLongitude());
             Log.d("","Locatoion " + latLng);
@@ -142,6 +145,16 @@ public class SFSShopMainActivity extends AppCompatActivity implements OnMapReady
             Log.d("sabdjkasdk",e.getLocalizedMessage());
         }
 
+    }
+
+    private void createOrder() {
+        Intent i2 = new Intent(SFSShopMainActivity.this, CreateOrdersActivity.class);
+        startActivity(i2);
+    }
+
+    private void startDetailOrder() {
+        Intent i3 = new Intent(SFSShopMainActivity.this, DetailOrdersActivity.class);
+        startActivity(i3);
     }
 
     @Override
@@ -256,6 +269,13 @@ public class SFSShopMainActivity extends AppCompatActivity implements OnMapReady
             mSfsPreference.putString("user_json", "");
             mSfsPreference.putInt("current_id_user", 0);
             Utils.getInstance().changeActivity(SFSShopMainActivity.this, MainActivity.class);
+        } else if (response.getFrom().equalsIgnoreCase(GetCodeOrder.NEW_CODE_ORDER)) {
+            try {
+                mSfsPreference.putString("order_code", response.getData().getString("code"));
+                createOrder();
+            } catch (JSONException e) {
+                e.getMessage();
+            }
         } else {
             try {
                 shipperListSync = new ShipperListSync(response.getData());
@@ -330,5 +350,9 @@ public class SFSShopMainActivity extends AppCompatActivity implements OnMapReady
         super.onDestroy();
         if (mMap != null)
             mMap.clear();
+    }
+
+    private void getNewCodeOrder() {
+        new GetCodeOrder(SFSShopMainActivity.this, this, this, userSync).start();
     }
 }

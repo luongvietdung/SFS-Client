@@ -41,6 +41,13 @@ public class CheckOrdersActivity extends AppCompatActivity implements Response.L
         mCodeOrder = (EditText) findViewById(R.id.edit_code_order);
         mCodeCheck = (EditText) findViewById(R.id.edit_code_check);
         mButtonCheck = (Button) findViewById(R.id.btn_check_order);
+
+        mButtonCheck.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                validate();
+            }
+        });
     }
 
     @Override
@@ -50,6 +57,10 @@ public class CheckOrdersActivity extends AppCompatActivity implements Response.L
 
     @Override
     public void onErrorResponse(VolleyError error) {
+
+    }
+
+    private void validate() {
 
     }
 }

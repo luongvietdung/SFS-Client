@@ -10,6 +10,7 @@ import android.widget.EditText;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.appsfs.sfs.R;
+import com.appsfs.sfs.Utils.SFSPreference;
 import com.appsfs.sfs.api.helper.CustomRespond;
 
 /**
@@ -18,6 +19,7 @@ import com.appsfs.sfs.api.helper.CustomRespond;
 public class CreateOrdersActivity extends AppCompatActivity implements Response.Listener<CustomRespond>, Response.ErrorListener {
     EditText mCodeOrder,mPhoneCustomer,mPhoneShipper,mCodeCheckOrder;
     Button mButtonCreateOrder;
+    SFSPreference mSfsPreference;
 
 
     @Override
@@ -36,8 +38,11 @@ public class CreateOrdersActivity extends AppCompatActivity implements Response.
                 onBackPressed();
             }
         });
+        mSfsPreference = SFSPreference.getInstance(this);
 
         mCodeOrder = (EditText) findViewById(R.id.edit_code_order);
+        mCodeOrder.setText(mSfsPreference.getString("order_code", ""));
+        mCodeOrder.setEnabled(false);
         mPhoneCustomer = (EditText) findViewById(R.id.edit_phone_customer);
         mPhoneShipper = (EditText) findViewById(R.id.edit_phone_shipper);
         mCodeCheckOrder = (EditText) findViewById(R.id.edit_code_check_order);
