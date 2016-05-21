@@ -1,5 +1,7 @@
 package com.appsfs.sfs.Objects;
 
+import com.appsfs.sfs.api.sync.UserSync;
+
 /**
  * Created by longdv on 5/20/16.
  */
@@ -10,6 +12,7 @@ public class Orders {
     private String codeCheckOrder;
     private String date;
     private int status;
+    private UserSync owner;
 
     public Orders() {
         super();
@@ -61,5 +64,13 @@ public class Orders {
 
     public void setStatus(int status) {
         this.status = status;
+    }
+
+    public UserSync getOwner() {
+        return owner;
+    }
+
+    public void setOwner(UserSync owner) {
+        this.owner = owner;
     }
 }
