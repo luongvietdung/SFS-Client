@@ -67,9 +67,9 @@ public class SFSShopMainActivity extends AppCompatActivity implements OnMapReady
     private DrawerLayout mDrawerLayout;
     private GoogleMap mMap;
     private TextView mHeaderName;
-    SFSPreference mSfsPreference;
     private View mHeaderView;
     LatLng latLng = null;
+    SFSPreference mSfsPreference;
     UserSync userSync;
 
     ShipperListSync shipperListSync;
