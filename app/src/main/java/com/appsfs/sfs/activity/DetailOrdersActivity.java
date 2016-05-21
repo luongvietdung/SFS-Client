@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +17,16 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.appsfs.sfs.Objects.Orders;
 import com.appsfs.sfs.R;
+import com.appsfs.sfs.Utils.SFSPreference;
+import com.appsfs.sfs.api.function.GetShipperOnline;
+import com.appsfs.sfs.api.function.GetShopOrder;
 import com.appsfs.sfs.api.helper.CustomRespond;
+import com.appsfs.sfs.api.sync.OrderListSync;
+import com.appsfs.sfs.api.sync.OrderSync;
+import com.appsfs.sfs.api.sync.UserSync;
+import com.google.android.gms.maps.model.LatLng;
+
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,8 +37,10 @@ import java.util.List;
 public class DetailOrdersActivity extends AppCompatActivity implements Response.Listener<CustomRespond>, Response.ErrorListener {
 
     ListView mListViewDetails;
-    List<Orders> mOrdersList	= null;
+    List<OrderSync> mOrdersList	= null;
     DetailOrdersAdapter		mAdapter;
+    SFSPreference mSfsPreference;
+    UserSync userSync;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,21 +58,39 @@ public class DetailOrdersActivity extends AppCompatActivity implements Response.
             }
         });
 
-        mListViewDetails = (ListView) findViewById(R.id.lv_detail_orders);
+        mSfsPreference = SFSPreference.getInstance(this);
+        String json = mSfsPreference.getString("user_json","");
+        try {
+            userSync = new UserSync(new JSONObject(json));
+        } catch (Exception e) {
+            Log.d("sabdjkasdk",e.getLocalizedMessage());
+        }
 
-        mOrdersList = getListOrders();
+        new GetShopOrder(DetailOrdersActivity.this, this, this, userSync).start();
+
+        mListViewDetails = (ListView) findViewById(R.id.lv_detail_orders);
+//
+//        mOrdersList = getListOrders();
+//        if (mOrdersList.size() != 0) {
+//            mAdapter = new DetailOrdersAdapter(getApplicationContext(), mOrdersList);
+//            mListViewDetails.setAdapter(mAdapter);
+//        } else {
+//            mListViewDetails.setVisibility(View.INVISIBLE);
+//        }
+
+    }
+
+    @Override
+    public void onResponse(CustomRespond response) {
+        Log.e("AAAAAA", response.getData().toString());
+        OrderListSync orderListSync = new OrderListSync(response.getData());
+        mOrdersList = orderListSync.getOrderSyncs();
         if (mOrdersList.size() != 0) {
             mAdapter = new DetailOrdersAdapter(getApplicationContext(), mOrdersList);
             mListViewDetails.setAdapter(mAdapter);
         } else {
             mListViewDetails.setVisibility(View.INVISIBLE);
         }
-
-    }
-
-    @Override
-    public void onResponse(CustomRespond response) {
-
     }
 
     @Override
@@ -69,20 +99,20 @@ public class DetailOrdersActivity extends AppCompatActivity implements Response.
     }
 
 
-    private List<Orders> getListOrders() {
-
-        ArrayList<Orders> ordersArrayList = new ArrayList<Orders>();
-        return ordersArrayList;
-
-    }
+//    private List<Orders> getListOrders() {
+//
+//        ArrayList<Orders> ordersArrayList = new ArrayList<Orders>();
+//        return ordersArrayList;
+//
+//    }
 }
 
 
     class DetailOrdersAdapter extends BaseAdapter {
-        private List<Orders> mOrdersList;
+        private List<OrderSync> mOrdersList;
         private LayoutInflater mInflater;
 
-        public DetailOrdersAdapter(Context context, final List<Orders> ordersList) {
+        public DetailOrdersAdapter(Context context, final List<OrderSync> ordersList) {
             mInflater = LayoutInflater.from(context);
             mOrdersList = ordersList;
             context.getPackageManager();
@@ -116,7 +146,7 @@ public class DetailOrdersActivity extends AppCompatActivity implements Response.
         public View getView(final int position, View convertView,
                             ViewGroup parent) {
             final ViewHolder holder;
-            final Orders orderInfo = mOrdersList.get(position);
+            final OrderSync orderInfo = mOrdersList.get(position);
 
             if (convertView == null) {
                 convertView = mInflater.inflate(
@@ -149,7 +179,7 @@ public class DetailOrdersActivity extends AppCompatActivity implements Response.
             holder.mPhoneShipper.setText(orderInfo.getPhoneShipper());
             holder.mCodeCheckOrder.setText(orderInfo.getCodeCheckOrder());
             holder.mDate.setText(orderInfo.getDate());
-            holder.mStatus.setText(orderInfo.getStatus());
+            holder.mStatus.setText(String.valueOf(orderInfo.getStatus()));
 
             return convertView;
         }
