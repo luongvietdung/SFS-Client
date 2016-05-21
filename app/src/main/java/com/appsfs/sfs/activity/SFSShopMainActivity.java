@@ -122,7 +122,6 @@ public class SFSShopMainActivity extends AppCompatActivity implements OnMapReady
                     case R.id.navigation_item_detail_order:
 
                         startDetailOrder();
-//                        getNewCodeOrder();
                         return true;
                     case R.id.navigation_item_signout:
                         clickLogout();

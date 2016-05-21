@@ -9,7 +9,10 @@ import android.widget.EditText;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.appsfs.sfs.Objects.Validation;
 import com.appsfs.sfs.R;
+import com.appsfs.sfs.Utils.Utils;
+import com.appsfs.sfs.api.function.VailidationOrder;
 import com.appsfs.sfs.api.helper.CustomRespond;
 
 /**
@@ -45,22 +48,40 @@ public class CheckOrdersActivity extends AppCompatActivity implements Response.L
         mButtonCheck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                validate();
+                onClickCheck();
             }
         });
     }
 
     @Override
     public void onResponse(CustomRespond response) {
-
+        Utils.getInstance().showToast(CheckOrdersActivity.this, "Validate success");
     }
 
     @Override
     public void onErrorResponse(VolleyError error) {
-
+        Utils.getInstance().showDiaglog(CheckOrdersActivity.this, "Validate unsuccessful", "Some thing wrong!");
     }
 
-    private void validate() {
+    private boolean validate() {
+        return !mCodeCheck.getText().toString().isEmpty() && !mCodeOrder.getText().toString().isEmpty() && !mPhoneShop.getText().toString().isEmpty();
+    }
 
+    private void onClickCheck() {
+        if (!validate()) {
+            Utils.getInstance().showDiaglog(CheckOrdersActivity.this, "Validate unsuccessful", "Please enter all field!");
+            return;
+        }
+
+        Validation validation = new Validation();
+        validation.setCodeCheckOrder(mCodeCheck.getText().toString());
+        validation.setCodeOrder(mCodeOrder.getText().toString());
+        validation.setPhoneShop(mPhoneShop.getText().toString());
+
+        requestAPI(validation);
+    }
+
+    private void requestAPI(Validation validation) {
+        new VailidationOrder(CheckOrdersActivity.this, this, this, validation).start();
     }
 }
