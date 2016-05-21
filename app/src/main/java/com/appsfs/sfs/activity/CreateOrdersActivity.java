@@ -1,5 +1,6 @@
 package com.appsfs.sfs.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -80,7 +81,7 @@ public class CreateOrdersActivity extends AppCompatActivity implements Response.
     @Override
     public void onResponse(CustomRespond response) {
         Log.e("aaa", response.getData().toString());
-        Utils.getInstance().showToast(CreateOrdersActivity.this,"Create order success!");
+        startDetailOrder();
     }
 
     @Override
@@ -112,6 +113,11 @@ public class CreateOrdersActivity extends AppCompatActivity implements Response.
 
     private void startRequest(Orders orders) {
         new CreateOrder(CreateOrdersActivity.this, this, this, orders).start();
+    }
+
+    private void startDetailOrder() {
+        Intent i3 = new Intent(CreateOrdersActivity.this, DetailOrdersActivity.class);
+        startActivity(i3);
     }
 
 
